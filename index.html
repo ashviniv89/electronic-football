@@ -12,18 +12,28 @@
         <p class="eyebrow">Electronic Football</p>
         <h1>World Cup Showdown</h1>
         <p class="intro">
-          Pick one of 195 countries and face a random rival in a fast, simple
-          soccer match.
+          Pick one of 195 countries, then control your player on the field with
+          WASD, aim with the mouse, and use the Pass button or E to play the ball.
+          Search for a nation and toggle 2 Player Mode for a local head-to-head match.
         </p>
       </header>
 
       <section class="panel controls-panel">
-        <label for="countrySelect">Choose your nation</label>
+        <label for="countrySearch">Choose your nation</label>
         <div class="control-row">
+          <input id="countrySearch" type="search" placeholder="Search countries" />
           <select id="countrySelect"></select>
           <button id="playButton">Start Match</button>
+          <button id="passButton" type="button">Pass</button>
+          <button id="dribbleButton" type="button">Dribble (L)</button>
         </div>
-        <p id="statusMessage" class="status">Select a country to begin.</p>
+        <div class="control-row toggle-row">
+          <label class="toggle-label" for="twoPlayerModeToggle">
+            <input id="twoPlayerModeToggle" type="checkbox" />
+            <span>2 Player Mode</span>
+          </label>
+        </div>
+        <p id="statusMessage" class="status">Select a country and begin.</p>
       </section>
 
       <section class="panel match-card">
@@ -38,12 +48,31 @@
             <p class="score" id="opponentScore">0</p>
           </div>
         </div>
+
+        <div class="game-area">
+          <canvas id="gameCanvas" width="900" height="480"></canvas>
+          <div id="matchScreen" class="match-screen">
+            <h3>Match Screen</h3>
+            <p id="matchScreenText">Choose your country and start the match.</p>
+            <button id="startMatchButton">Kick Off</button>
+          </div>
+        </div>
+
+        <div class="controls-hint">
+          <span>WASD = move</span>
+          <span>Space = shoot</span>
+          <span>Pass = pass</span>
+          <span>F = tackle</span>
+          <span>Arrows = 2P move</span>
+          <span>Enter = 2P shoot</span>
+          <span>L = dribble</span>
+        </div>
         <p id="matchSummary" class="summary">
-          Your match result will appear here.
+          Move with WASD and press space to shoot.
         </p>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260719-2"></script>
   </body>
 </html>
